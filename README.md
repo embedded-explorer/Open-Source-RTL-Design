@@ -1,6 +1,7 @@
-# Open-Source-RTL-Design
-This repository contains overview of things carried out during VSD "RTL Design Using Verilog With SKY130 Technology" workshop
+# Open Source RTL Design
+This repository contains the usage of tools like iverilog, gtkwave and yosys for open-source RTL Design. The content is documentation of tasks carried out during VSD "RTL Design Using Verilog With SKY130 Technology".
 
+# Table of Contents
 - [Heading](#heading)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
