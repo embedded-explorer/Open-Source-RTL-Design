@@ -18,17 +18,20 @@ Usually front-end RTL design is carried out using huge EDA Tools from different 
 
 iverilog is the tool used for compiling and simulation purpose. Simulation is the process of creating models that mimic the behavior of the device. Tool performs macro preprocessing, compilation, elaboration, optional optimizations and finally code generation. For more details about the tool refer the [wiki](https://iverilog.fandom.com/wiki/User_Guide).
 
+* Use following command to install iverilog on Ubuntu machine
+
+```
+sudo apt install iverilog
+```
 
 ### gtkwave
 
 The simulator generates value change dump (.vcd) file this can be viewed as wave using gtkwave waveform viewer.
 
-
 ### yosys
 
-yosys is used for synthesis. Synthesizer takes the design file and technology library file as input and produces netlist. Syntesis is the process in which the design is mapped to standard cells defined in the technology library. For further details about the tool refer the [documentation](https://iverilog.fandom.com/wiki/User_Guide).
+yosys is used for synthesis. Synthesizer takes the design file and technology library file as input and produces netlist. Syntesis is the process in which the design is mapped to standard cells defined in the technology library. Here we are using SKY130 Technology library file. For further details about the tool refer the [documentation](http://www.clifford.at/yosys/documentation.html).
 
-This is an h1 heading
 
 ### Sub-heading
 
