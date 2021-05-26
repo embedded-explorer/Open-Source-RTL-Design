@@ -10,15 +10,19 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
 
-## Heading
+## Open Source Tool Chain
 
 Usually front-end RTL design is carried out using huge EDA Tools from different vendors. Even though many of the tools come with free limited versions its better to give a try for development using open-source tools. Below is the list of tools used by this repo.
 
-### Sub-heading
+### iverilog
 
 This is an h2 heading
 
-#### Sub-sub-heading
+### gtkwave
+
+This is an h3 heading
+
+### yosys
 
 This is an h3 heading
 
