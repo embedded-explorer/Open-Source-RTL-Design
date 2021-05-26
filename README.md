@@ -26,7 +26,7 @@ The simulator generates value change dump (.vcd) file this can be viewed as wave
 
 ### yosys
 
-yosys is used for synthesis. Synthesizer takes the design file and technology library file as input and produces netlist. Syntesis is the process in which the design is mapped to standard cells defined in the technology library. 
+yosys is used for synthesis. Synthesizer takes the design file and technology library file as input and produces netlist. Syntesis is the process in which the design is mapped to standard cells defined in the technology library. For further details about the tool refer the [documentation](https://iverilog.fandom.com/wiki/User_Guide).
 
 This is an h1 heading
 
