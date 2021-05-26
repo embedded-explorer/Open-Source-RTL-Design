@@ -16,9 +16,8 @@ Usually front-end RTL design is carried out using huge EDA Tools from different 
 
 ### iverilog
 
-This is an h2 heading
+iverilog is the tool used for compiling and simulation purpose. Simulation is the process of creating models that mimic the behavior of the device. Tool performs macro preprocessing, compilation, elaboration, optional optimizations and finally code generation. For more details about the tool refer the [wiki](http://bleyer.org/icarus/).
 
-### gtkwave
 
 This is an h3 heading
 
