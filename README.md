@@ -2,16 +2,13 @@
 This repository contains the usage of tools like iverilog, gtkwave and yosys for open-source RTL Design. The content is documentation of tasks carried out during VSD "RTL Design Using Verilog With SKY130 Technology".
 
 # Table of Contents
-- [Heading](#heading)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
-- [Heading](#heading-1)
+- [Tool Chain](#heading)
+  * [iverilog](#sub-heading)
+  * [gtkwave](#sub-heading)
+  * [yosys](#sub-heading)
+- [Designing 2to1 Mux](#heading-1)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
-  * [Sub-heading](#sub-heading-2)
-    + [Sub-sub-heading](#sub-sub-heading-2)
-
 
 # Heading levels
 
