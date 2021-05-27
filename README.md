@@ -4,15 +4,7 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 ## Table of Contents
 
 - [Open Source Tool Chain](#heading)
-  * [Sub-heading](#sub-heading)
-
-## Open Source Tool Chain
-
-This is an h1 heading
-
-### Sub-heading
-
-This is an h2 heading
+  * [iverilog](#sub-heading)
 
 ## Open Source Tool Chain
 
