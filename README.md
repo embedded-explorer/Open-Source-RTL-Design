@@ -114,3 +114,5 @@ show
 ## Modelling Concepts
 
 ### mux
+
+Multiplexer is a simple device which selects one output among multiple inputs. This illustration is used to faliliarize with the tool flow.
