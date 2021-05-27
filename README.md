@@ -119,4 +119,9 @@ Multiplexer is a simple device which selects one output among multiple inputs. T
 
 ![Multiplexer Modelling](images/mux.png)
 
+Below figure shows the logical representation of the design after performing synthesis.
+
+![Multiplexer Synthesised Output](images/synthesized_mux.png)
+
+
 ###
