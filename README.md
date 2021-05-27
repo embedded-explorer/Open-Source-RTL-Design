@@ -8,11 +8,12 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [gtkwave](#gtkwave)
   * [sky130 libraries](#sky130-libraries)
   * [yosys](#yosys)
-- [Modelling Concepts](#Modelling-Concepts)
-  * [mux](#mux)
-  * [gtkwave](#gtkwave)
-  * [sky130 libraries](#sky130-libraries)
-  * [yosys](#yosys)
+- [Modelling Techniques](#Modelling-Techniques)
+  * [Modelling Combinational Logic](#Modelling-Combinational-Logic)
+- [Synthesis Techniques](#Modelling-Techniques)
+  * [Hierarchial Synthesis](#Hierarchial-Synthesis)
+  * [Flat Synthesis](#Flat-Synthesis)
+  * [Submodule Synthesis](#Submodule-Synthesis)
 
 ## Open Source Tool Chain
 
@@ -111,11 +112,11 @@ abc -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
 
-## Modelling Concepts
+## Modelling Techniques
 
-### mux
+### Modelling Combinational Logic
 
-Multiplexer is a simple device which selects one output among multiple inputs. This illustration is used to faliliarize with the tool flow. To properly model any combinational logic in verilog the sensitivity list must contain all inputs, else the design will not function as expected. Below figure shows good and bad modelling stype along with the simulation waveform. Left side of the figure has proper verilog code for the mux. The code shown in right side has only select input in sensitivity list hence the output will not change if select input is constant and inputs are changing.
+To properly model any combinational logic in verilog the sensitivity list must contain all inputs, else the design will not function as expected. To demonstrate this concept consider a simple multiplexer as example. Below figure shows good and bad modelling style along with the simulation waveform. Left side of the figure has proper verilog code for the mux. The code shown in right side has only select input in sensitivity list hence the output will not change if select input is constant and inputs are changing.
 
 ![Multiplexer Modelling](images/mux.png)
 
@@ -124,4 +125,11 @@ Below figure shows the logical representation of the design after performing syn
 ![Multiplexer Synthesised Output](images/synthesized_mux.png)
 
 
-###
+## Synthesis Techniques
+
+Consider an example of a simple example 
+
+### Hierarchial Synthesis
+
+Hierarchial synthesis can be performed using yosys by following the steps mentioned in [above section](#yosys).
+
