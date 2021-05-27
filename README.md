@@ -5,12 +5,20 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 
 - [Open Source Tool Chain](#Open-Source-Tool-Chain)
   * [iverilog](#iverilog)
+  * [gtkwave](#gtkwave)
+  * [sky130 libraries](#sky130-libraries)
+  * [yosys](#yosys)
+- [Modelling Concepts](#Modelling-Concepts)
+  * [mux](#mux)
+  * [gtkwave](#gtkwave)
+  * [sky130 libraries](#sky130-libraries)
+  * [yosys](#yosys)
 
-# Open Source Tool Chain
+## Open Source Tool Chain
 
 Usually front-end RTL design is carried out using huge EDA Tools from different vendors. Even though many of the tools come with free limited versions its better to give a try for development using open-source tools. Below is the list of tools used by this repo.
 
-## iverilog
+### iverilog
 
 iverilog is the tool used for compiling and simulation purpose. Simulation is the process of creating models that mimic the behavior of the device. Tool performs macro preprocessing, compilation, elaboration, optional optimizations and finally code generation. For more details about the tool refer the [wiki](https://iverilog.fandom.com/wiki/User_Guide).
 
@@ -48,7 +56,7 @@ sudo apt install gtkwave
 gtkwave test_bench.vcd
 ```
 
-### SKY130 Libraries
+### sky130 libraries
 
 sky130 pdk library is used for mapping the purpose during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git).
 
@@ -67,3 +75,7 @@ yosys is used for synthesis. Synthesizer takes the design file and technology li
 ```
 sudo apt install yosys
 ```
+
+## Modelling Concepts
+
+### mux
