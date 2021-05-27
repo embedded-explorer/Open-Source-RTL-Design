@@ -3,16 +3,8 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 
 ## Table of Contents
 
-- [Open Source Tool Chain](#heading-1)
-  * [iverilog](#sub-heading-1)
-  * [gtkwave](#sub-heading-2)
-  * [SKY130 libraries](#sub-heading-3)
-  * [yosys](#sub-heading-4)
-- [Modelling Concepts](#heading-2)
-  * [Multiplexer](#sub-heading-5)
-
-- [Open Source Tool Chain](#heading)
-  * [iverilog](#sub-heading)
+- [Open Source Tool Chain](##heading)
+  * [iverilog](###sub-heading)
   * [gtkwave](#sub-heading)
   * [SKY130 Libraries](#sub-heading)
   * [yosys](#sub-heading)
