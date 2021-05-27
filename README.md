@@ -13,7 +13,7 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 - [Synthesis Techniques](#Modelling-Techniques)
   * [Hierarchial Synthesis](#Hierarchial-Synthesis)
   * [Flat Synthesis](#Flat-Synthesis)
-  * [Submodule Synthesis](#Submodule-Synthesis)
+  * [Submodule Level Synthesis](#Submodule-Level-Synthesis)
 
 ## Open Source Tool Chain
 
@@ -127,9 +127,38 @@ Below figure shows the logical representation of the design after performing syn
 
 ## Synthesis Techniques
 
-Consider an example of a simple example 
+Consider a simple example `multiple_modules` which instntiates two modules `sub_module1` and `sub_module2`. The sub-modules realize and logic and or logic respectively.
 
 ### Hierarchial Synthesis
 
-Hierarchial synthesis can be performed using yosys by following the steps mentioned in [above section](#yosys).
+Hierarchial synthesis can be performed using yosys by following the steps mentioned in [above section](#yosys). When there are more than one modules we need to explicitly mention the name of the module while running `show` command. The show command does not show the internals of the submodules, it is maintaining hierarchial representation.
+
+```
+show multiple_modules
+```
+
+![Hierarchial Synthesis](images/synth_hier.png)
+
+The netlist can be written using following command. By observing the netlist we can confirm that hierarchial representation is retained.
+
+```
+write_verilog -noattr multiple_modules_hier.v
+```
+### Flat Synthesis
+
+Run the below command to flatten the synthesized design
+
+```
+flatten
+```
+The synthesized design looks as shown below if we run `show` command after flattening the design. Even the netlist will be flattened and this can be viewed by writing the netlist.
+
+![Flat Synthesis](images/synth_flat.png)
+
+### Submodule Level Synthesis
+
+Submodule level synthesis comes handy in several cases, if same submodule is instantiated many times within the module then we can synthesize the submodule only once using the submodule level synthesis. Consider another case where the design is very large and produces non-optimal netlist when synthesis is performed at once, here we can synthesize the submodules seperatly to produce optimal netlist.
+
+Submodule synthesis can be performed using yosys by following same steps mentioned in [above section](#yosys). But we need to provide required submodule for `synth -top` command.
+
 
