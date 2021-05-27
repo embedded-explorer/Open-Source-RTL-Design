@@ -76,6 +76,41 @@ yosys is used for synthesis. Synthesizer takes the design file and technology li
 sudo apt install yosys
 ```
 
+* Invoke yosys by running following command
+
+```
+yosys
+```
+
+* Read library using following command
+
+```
+read_liberty -lib my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+* Read design files using following command
+
+```
+read_verilog ../design_file.v
+```
+
+* Synthesize the design module
+
+```
+synth -top design_file
+```
+
+* Generate the netlist
+
+```
+abc -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+* View the realized logic
+
+```
+show
+```
+
 ## Modelling Concepts
 
 ### mux
