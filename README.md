@@ -15,6 +15,8 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [Hierarchial Synthesis](#Hierarchial-Synthesis)
   * [Flat Synthesis](#Flat-Synthesis)
   * [Submodule Level Synthesis](#Submodule-Level-Synthesis)
+- [Beauty of Optimizations](#Beauty-of-Optimizations)
+  * [Synthesizing Multiplier](#Synthesizing-Multiplier)
 
 ## Open Source Tool Chain
 
