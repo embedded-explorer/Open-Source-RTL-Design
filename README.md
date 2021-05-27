@@ -2,6 +2,7 @@
 This repository contains the usage of tools like iverilog, gtkwave and yosys for open-source RTL Design. The content is documentation of tasks carried out during VSD "RTL Design Using Verilog With SKY130 Technology".
 
 ## Table of Contents
+
 - [Open Source Tool Chain](#heading-1)
   * [iverilog](#sub-heading-1)
   * [gtkwave](#sub-heading-2)
@@ -9,6 +10,14 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [yosys](#sub-heading-4)
 - [Modelling Concepts](#heading-2)
   * [Multiplexer](#sub-heading-5)
+
+- [Open Source Tool Chain](#heading)
+  * [iverilog](#sub-heading)
+  * [gtkwave](#sub-heading)
+  * [SKY130 Libraries](#sub-heading)
+  * [yosys](#sub-heading)
+- [Modelling Concepts](#heading-1)
+  * [mux](#sub-heading-1)
 
 ## Open Source Tool Chain
 
@@ -52,7 +61,7 @@ sudo apt install gtkwave
 gtkwave test_bench.vcd
 ```
 
-### SKY130 libraries
+### SKY130 Libraries
 
 sky130 pdk library is used for mapping the purpose during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git).
 
