@@ -3,8 +3,8 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 
 ## Table of Contents
 
-- [Open Source Tool Chain](#heading)
-  * [iverilog](#sub-heading)
+- [Open Source Tool Chain](#Open-Source-Tool-Chain)
+  * [iverilog](#iverilog)
 
 # Open Source Tool Chain
 
