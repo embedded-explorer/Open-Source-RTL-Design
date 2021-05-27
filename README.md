@@ -9,8 +9,9 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [sky130 libraries](#sky130-libraries)
   * [yosys](#yosys)
 - [Modelling Techniques](#Modelling-Techniques)
-  * [Modelling Combinational Logic](#Modelling-Combinational-Logic)
-- [Synthesis Techniques](#Modelling-Techniques)
+  * [Sensitivity List for Combinational Logic](#Sensitivity-List-for-Combinational-Logic)
+  * [Modelling Flip Flops](#Modelling-Flip-Flops)
+- [Synthesis Techniques](#Synthesis-Techniques)
   * [Hierarchial Synthesis](#Hierarchial-Synthesis)
   * [Flat Synthesis](#Flat-Synthesis)
   * [Submodule Level Synthesis](#Submodule-Level-Synthesis)
@@ -114,7 +115,7 @@ show
 
 ## Modelling Techniques
 
-### Modelling Combinational Logic
+### Sensitivity List for Combinational Logic
 
 To properly model any combinational logic in verilog the sensitivity list must contain all inputs, else the design will not function as expected. To demonstrate this concept consider a simple multiplexer as example. Below figure shows good and bad modelling style along with the simulation waveform. Left side of the figure has proper verilog code for the mux. The code shown in right side has only select input in sensitivity list hence the output will not change if select input is constant and inputs are changing.
 
@@ -123,6 +124,10 @@ To properly model any combinational logic in verilog the sensitivity list must c
 Below figure shows the logical representation of the design after performing synthesis.
 
 ![Multiplexer Synthesised Output](images/synthesized_mux.png)
+
+### Modelling Flip Flops
+
+Flip Flops are basic sequential elements which are capable of storing single bit of data. They come handy even in avoiding glitches in the combinational logic. To define the initial state of flip flops set and reset inputs are used and they can be modelled as either synchronous or asynhronous with the clock input.
 
 
 ## Synthesis Techniques
