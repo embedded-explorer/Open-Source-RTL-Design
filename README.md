@@ -24,6 +24,18 @@ iverilog is the tool used for compiling and simulation purpose. Simulation is th
 sudo apt install iverilog
 ```
 
+* Compile the design files and associated test bench using following command, it produces a executable
+
+```
+iverilog design_file.v test_bench.v
+```
+
+* Execute the a.out file to produce vcd file
+
+```
+./a.out
+```
+
 ### gtkwave
 
 The simulator generates value change dump (.vcd) file this can be viewed as wave using gtkwave waveform viewer.
