@@ -115,4 +115,8 @@ show
 
 ### mux
 
-Multiplexer is a simple device which selects one output among multiple inputs. This illustration is used to faliliarize with the tool flow.
+Multiplexer is a simple device which selects one output among multiple inputs. This illustration is used to faliliarize with the tool flow. To properly model any combinational logic in verilog the sensitivity list must contain all inputs, else the design will not function as expected. Below figure shows good and bad modelling stype along with the simulation waveform. Left side of the figure has proper verilog code for the mux. The code shown in right side has only select input in sensitivity list hence the output will not change if select input is constant and inputs are changing.
+
+![Multiplexer Modelling](images/mux.png)
+
+###
