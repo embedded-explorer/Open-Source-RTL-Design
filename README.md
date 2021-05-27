@@ -5,10 +5,10 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 - [Open Source Tool Chain](#heading)
   * [iverilog](#sub-heading)
   * [gtkwave](#sub-heading)
+  * [SKY130 libraries](#sub-heading)
   * [yosys](#sub-heading)
-- [Designing 2to1 Mux](#heading-1)
-  * [Sub-heading](#sub-heading-1)
-    + [Sub-sub-heading](#sub-sub-heading-1)
+- [Modelling Concepts](#heading)
+  * [Multiplexer](#sub-heading)
 
 ## Open Source Tool Chain
 
@@ -52,7 +52,7 @@ sudo apt install gtkwave
 gtkwave test_bench.vcd
 ```
 
-### sky130 libraries
+### SKY130 libraries
 
 sky130 pdk library is used for mapping the purpose during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git).
 
