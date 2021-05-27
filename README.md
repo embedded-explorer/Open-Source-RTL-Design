@@ -129,7 +129,7 @@ Below figure shows the logical representation of the design after performing syn
 
 Flip Flops are basic sequential elements which are capable of storing single bit of data. They come handy even in avoiding glitches in the combinational logic. To define the initial state of flip flops set and reset inputs are used and they can be modelled as either synchronous or asynhronous with the clock input.
 
-Steps for synthesis remain same as mentioned in [above section](#yosys) until `synth -top`. Before we proceed further with `abc -liberty` we need to mention the library for flip flops using command shown below. This extra step is required when there are flops in the design because Usually there will be a seperate library for flip flops under standard cell library, but in our case there is only one library for everything.
+Steps for synthesis remain same as mentioned in [above section](#yosys), but before performing `synth -top` we need to mention the library for flip flops using command shown below. This extra step is required when there are flops in the design because, usually there will be a seperate library for flip flops under standard cell library, but in our case there is only one library for everything.
 
 ```
 dfflibmap -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
