@@ -16,7 +16,7 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [Flat Synthesis](#Flat-Synthesis)
   * [Submodule Level Synthesis](#Submodule-Level-Synthesis)
 - [Beauty of Optimizations](#Beauty-of-Optimizations)
-  * [Synthesizing Multiplier](#Synthesizing-Multiplier)
+  * [Synthesizing Multipliers](#Synthesizing-Multipliers)
 
 ## Open Source Tool Chain
 
@@ -188,4 +188,10 @@ Submodule level synthesis comes handy in several cases, if same submodule is ins
 
 Submodule synthesis can be performed using yosys by following same steps mentioned in [above section](#yosys). But we need to provide required submodule for `synth -top` command.
 
+## Beauty of Optimizations
 
+### Synthesizing Multipliers
+
+We all know that multiplying by 2 is nothing but left shifting the input data by 1. Hence the design does not need any cells to implement this logic. Similarly there are some special cases when input data is 3 bit wide and multiplied by 9 then the result is nothing but replication of input data 2 times. The synthesizer is smart enough to optimize this kind of logic and it is evident from the below image.
+
+![mult](images/mult.png)
