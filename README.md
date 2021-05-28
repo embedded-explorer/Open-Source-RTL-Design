@@ -152,7 +152,7 @@ Below figure shows verilog code for DFF with synchronous reset along with wavefo
 
 Below figure shows verilog code for DFF with asynchronous set along with waveforms and synthesized logic.
 
-![aff_async_set](images/aff_async_set.png)
+![dff_async_set](images/aff_async_set.png)
 
 ## Synthesis Techniques
 
@@ -165,8 +165,6 @@ Hierarchial synthesis can be performed using yosys by following the steps mentio
 ```
 show multiple_modules
 ```
-
-![Hierarchial Synthesis](images/synth_hier.png)
 
 The netlist can be written using following command. By observing the netlist we can confirm that hierarchial representation is retained.
 
@@ -182,7 +180,7 @@ flatten
 ```
 The synthesized design looks as shown below if we run `show` command after flattening the design. Even the netlist will be flattened and this can be viewed by writing the netlist.
 
-![Flat Synthesis](images/synth_flat.png)
+![synthesis](images/synthesis.png)
 
 ### Submodule Level Synthesis
 
