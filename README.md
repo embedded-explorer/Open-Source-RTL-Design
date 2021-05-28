@@ -86,30 +86,30 @@ sudo apt install yosys
 yosys
 ```
 
-* Read library using following command
+* Read library using following command, number of cells imported will be displayed after successful run.
 
 ```
 read_liberty -lib my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-* Read design files using following command
+* Read design files using following command, `Successfully finished Verilog frontend` message will be displayed if run is successful.
 
 ```
 read_verilog ../design_file.v
 ```
 
-* Synthesize the design module
+* Synthesize the design module by running below command. View the statistics printed.
 
 ```
 synth -top design_file
 ```
 
-* Generate the netlist
+* Generate the netlist, view the standard cells mapped.
 
 ```
 abc -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
-* View the realized logic
+* View the realized logic using below command.
 
 ```
 show
