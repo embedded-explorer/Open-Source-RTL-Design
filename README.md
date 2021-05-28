@@ -128,23 +128,31 @@ show
 
 ### Sensitivity List for Combinational Logic
 
-To properly model any combinational logic in verilog the sensitivity list must contain all inputs, else the design will not function as expected. To demonstrate this concept consider a simple multiplexer as example. Below figure shows good and bad modelling style along with the simulation waveform. Left side of the figure has proper verilog code for the mux. The code shown in right side has only select input in sensitivity list hence the output will not change if select input is constant and inputs are changing.
+To properly model any combinational logic using verilog the sensitivity list must contain all inputs, else the design will not function as expected. To demonstrate this concept consider a simple multiplexer as example. Below figure shows improper modelling style along with the waveform. It is evident that the output changes only when select input changes and is unaffected by changing only inputs which is not expected.
 
-![Multiplexer Modelling](images/mux.png)
+![bad_mux](images/bad_mux.png)
 
-Below figure shows the logical representation of the design after performing synthesis.
+In proper modelling all the input ports must be present in sensitivity list and output must change as soon as any of the input changes.
 
-![Multiplexer Synthesised Output](images/synthesized_mux.png)
+![good_mux](images/good_mux.png)
 
 ### Modelling Flip Flops
 
 Flip Flops are basic sequential elements which are capable of storing single bit of data. They come handy even in avoiding glitches in the combinational logic. To define the initial state of flip flops set and reset inputs are used and they can be modelled as either synchronous or asynhronous with the clock input.
 
-Steps for synthesis remain same as mentioned in [above section](#yosys), but before performing `synth -top` we need to mention the library for flip flops using command shown below. This extra step is required when there are flops in the design because, usually there will be a seperate library for flip flops under standard cell library, but in our case there is only one library for everything.
+Steps for synthesis remain same as mentioned in [above section](#yosys), but after performing `synth -top` we need to mention the library for flip flops using command shown below. This extra step is required when there are flops in the design because, usually there will be a seperate library for flip flops under standard cell library, but in our case there is only one library for everything.
 
 ```
 dfflibmap -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+
+Below figure shows verilog code for DFF with synchronous reset along with waveforms and synthesized logic.
+
+![dff_syncres](images/dff_syncres.png)
+
+Below figure shows verilog code for DFF with asynchronous set along with waveforms and synthesized logic.
+
+![aff_async_set](images/aff_async_set.png)
 
 ## Synthesis Techniques
 
