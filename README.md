@@ -26,19 +26,19 @@ Usually front-end RTL design is carried out using huge EDA Tools from different 
 
 iverilog is the tool used for compiling and simulation purpose. Simulation is the process of creating models that mimic the behavior of the device. Tool performs macro preprocessing, compilation, elaboration, optional optimizations and finally code generation. For more details about the tool refer the [wiki](https://iverilog.fandom.com/wiki/User_Guide).
 
-* Use following command to install iverilog on Ubuntu machine
+* Use following command to install iverilog on Ubuntu machine.
 
 ```
 sudo apt install iverilog
 ```
 
-* Compile the design files and associated test bench using following command, it produces a executable
+* Compile the design files and associated test bench using following command, it produces a executable.
 
 ```
 iverilog design_file.v test_bench.v
 ```
 
-* Execute the a.out file to produce vcd file
+* Execute the a.out file to produce vcd file.
 
 ```
 ./a.out
@@ -48,23 +48,25 @@ iverilog design_file.v test_bench.v
 
 The simulator generates value change dump (.vcd) file this can be viewed as wave using gtkwave waveform viewer.
 
-* Use following command to install gtkwave on Ubuntu machine
+* Use following command to install gtkwave on Ubuntu machine.
 
 ```
 sudo apt install gtkwave
 ```
 
-* Run following command to view the waveform
+* Run following command to view the waveform.
 
 ```
 gtkwave test_bench.vcd
 ```
 
+![iverilog_gtkwave](images/iverilog_gtkwave.png)
+
 ### sky130 libraries
 
 sky130 pdk library is used for mapping the purpose during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git). For further details about the library refer [wiki](https://skywater-pdk.readthedocs.io/en/latest/contents.html).
 
-* Clone the repository using following command
+* Clone the repository using following command.
 
 ```
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
@@ -74,13 +76,13 @@ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 yosys is used for synthesis. Synthesizer takes the design file and technology library file as input and produces netlist. Syntesis is the process in which the design is mapped to standard cells defined in the technology library. Here we are using SKY130 Technology library file. For further details about the tool refer the [documentation](http://www.clifford.at/yosys/documentation.html).
 
-* Use following command to install yosys on Ubuntu machine
+* Use following command to install yosys on Ubuntu machine.
 
 ```
 sudo apt install yosys
 ```
 
-* Invoke yosys by running following command
+* Invoke yosys by running following command.
 
 ```
 yosys
@@ -104,16 +106,23 @@ read_verilog ../design_file.v
 synth -top design_file
 ```
 
+![yosys_stat](images/yosys_stat.png)
+
 * Generate the netlist, view the standard cells mapped.
 
 ```
 abc -liberty my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+
+![yosys_cell_map](images/yosys_cell_map.png)
+
 * View the realized logic using below command.
 
 ```
 show
 ```
+
+![synth_mux](images/synth_mux.png)
 
 ## Modelling Techniques
 
