@@ -196,9 +196,16 @@ We all know that multiplying by 2 is nothing but left shifting the input data by
 
 ![mult](images/mult.png)
 
-### Combinational Logic Optimization
+### Combinational Logic Optimizations
 
-Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization.
+Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization. Below are few optimization examples.
+
+* Constant Propagation Example
+If any one of the input to the combinational logic is tied to constant, then the logic will be optimized by the synthesizer.
+
+```
+opt_clean -purge
+```
 
 ### Sequential Logic Optimization
 
