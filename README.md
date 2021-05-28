@@ -152,7 +152,7 @@ Below figure shows verilog code for DFF with synchronous reset along with wavefo
 
 Below figure shows verilog code for DFF with asynchronous set along with waveforms and synthesized logic.
 
-![dff_async_set](images/aff_async_set.png)
+![dff_async_set](images/dff_async_set.png)
 
 ## Synthesis Techniques
 
