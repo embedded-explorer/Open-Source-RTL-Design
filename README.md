@@ -195,3 +195,11 @@ Submodule synthesis can be performed using yosys by following same steps mention
 We all know that multiplying by 2 is nothing but left shifting the input data by 1. Hence the design does not need any cells to implement this logic. Similarly there are some special cases when input data is 3 bit wide and multiplied by 9 then the result is nothing but replication of input data 2 times. The synthesizer is smart enough to optimize this kind of logic and it is evident from the below image.
 
 ![mult](images/mult.png)
+
+### Combinational Logic Optimization
+
+Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization.
+
+### Sequential Logic Optimization
+
+Combinational logic can be optimized using methods like Sequential Constant Propagation, State Optimization, Retiming and Sequential Logic Cloning (Floor Plan Aware Synthesis).
