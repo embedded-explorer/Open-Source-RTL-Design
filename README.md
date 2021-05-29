@@ -17,6 +17,12 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [Submodule Level Synthesis](#Submodule-Level-Synthesis)
 - [Beauty of Optimizations](#Beauty-of-Optimizations)
   * [Synthesizing Multipliers](#Synthesizing-Multipliers)
+  * [Combinational Logic Optimization](#Combinational-Logic-Optimization)
+  * [Sequential Logic Optimization](#Sequential-Logic-Optimization)
+  * [Unuesd Output Optimization](#Unuesd-Output-Optimization)
+- [Gate Level Simulation (GLS)](#Gate-Level-Simulation-(GLS))
+  * [Incomplete Sensitivity List](#Incomplete-Sensitivity-List)
+  * [Blocking Assignments](#Blocking-Assignments)
 
 ## Open Source Tool Chain
 
@@ -198,7 +204,7 @@ We all know that multiplying by 2 is nothing but left shifting the input data by
 
 ![mult](images/mult.png)
 
-### Combinational Logic Optimizations
+### Combinational Logic Optimization
 
 Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization. Below are few optimization examples.
 
@@ -216,7 +222,7 @@ Combinational logic can be optimized using methods like Sequential Constant Prop
 ### Unuesd Output Optimization
 
 ## Gate Level Simulation (GLS)
-Gate Level Simulation is nothing but running testbench considering the netlist as design under test instead of RTL code. GLS needs to be performed to verify the logical correctness of the design after synthesis. It is used to find if there are any synthesis simulation mismatches, i.e. the simulation of `RTL` and `netlist` yeilds to different results. GLS is also used to ensure that the timing of the design is met, but to verify timing GLS needs to be run with delay annotation. To perform GLS using iverilog we need to provide the netlist along with the gate level verilog models of the standard cells and testbench while invoking `iverilog`. If gate level verilog models contain timing information then we can perform timing aware GLS but in our case we are only performing basic GLS to verify the logic. Synthesis simulation mismatch can occur due to two main reasons, incomplete sensitivity list, and blocking assignments.
+Gate Level Simulation is nothing but running testbench considering the netlist as design under test instead of RTL code. GLS needs to be performed to verify the logical correctness of the design after synthesis. It is used to find if there are any synthesis simulation mismatches. GLS is also used to ensure that the timing of the design is met, but to verify timing GLS needs to be run with delay annotation. To perform GLS using iverilog we need to provide the netlist along with the gate level verilog models of the standard cells and testbench while invoking `iverilog`. If gate level verilog models contain timing information then we can perform timing aware GLS but in our case we are only performing basic GLS to verify the logic. Synthesis simulation mismatch can occur due incomplete sensitivity list, blocking assignments and non stndard verilog.
 
 ### Incomplete Sensitivity List
 
@@ -230,4 +236,9 @@ Below are the simulation results of mux with only select input in sensitivity li
 
 ### Blocking Assignments
 
+Blocking assignments are evaluated sequentially and sometimes cause serious problems if they are not used properly. Consider combinationational circuit example shown below, the verilog code tries to implement or gate followed by and gate. During simulation `d = x & c` is evaluated first hence the and gate considers previous value of `x` which is evident by waveforms. As it is a combinational logic the synthesizer implements it properly and the output does not depend on previous value. This causes synthesis simulation mismatch.
+
+![mismatch_blocking](images/mismatch_blocking.png)
+
+Conseder example of shift register, the verilog code tries to implemnt 2 bit shift register. The in which `q1 = d` and `dout = q1` is swapped, due to sequential nature of blocking assignments as `q1 = d` is evaluated first `dout = q1` is nothing but `dout = d`. Hence even though we try to implement 2 FFs it is equivalent to implementing only 1 FF. 
 
