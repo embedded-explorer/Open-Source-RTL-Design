@@ -124,6 +124,8 @@ show
 
 ![synth_mux](images/synth_mux.png)
 
+**Note** : Due to different optimization techniques used the synthesizer may implement different logic when synthesized using different tool versions.
+
 ## Modelling Techniques
 
 ### Sensitivity List for Combinational Logic
