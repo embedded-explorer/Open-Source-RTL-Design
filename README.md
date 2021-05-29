@@ -218,7 +218,7 @@ Below are two examples of constant propagation optimization, in first case even 
 
 ![comb_opt1](images/comb_opt1.png)
 
-Here is another example with multiple modules, in this case we the order to run the commands is `synth -top` `flatten` `opt_clean -purge` `abc -liberty`
+Here is another example with multiple modules, in this case order of running commands is `synth -top` `flatten` `opt_clean -purge` `abc -liberty`
 
 ![comb_opt2](images/comb_opt2.png)
 
