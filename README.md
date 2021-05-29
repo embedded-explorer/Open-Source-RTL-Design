@@ -212,3 +212,22 @@ opt_clean -purge
 ### Sequential Logic Optimization
 
 Combinational logic can be optimized using methods like Sequential Constant Propagation, State Optimization, Retiming and Sequential Logic Cloning (Floor Plan Aware Synthesis).
+
+### Unuesd Output Optimization
+
+## Gate Level Simulation (GLS)
+Gate Level Simulation is nothing but running testbench considering the netlist as design under test instead of RTL code. GLS needs to be performed to verify the logical correctness of the design after synthesis. It is used to find if there are any synthesis simulation mismatches, i.e. the simulation of `RTL` and `netlist` yeilds to different results. GLS is also used to ensure that the timing of the design is met, but to verify timing GLS needs to be run with delay annotation. To perform GLS using iverilog we need to provide the netlist along with the gate level verilog models of the standard cells and testbench while invoking `iverilog`. If gate level verilog models contain timing information then we can perform timing aware GLS but in our case we are only performing basic GLS to verify the logic. Synthesis simulation mismatch can occur due to two main reasons, incomplete sensitivity list, and blocking assignments.
+
+### Incomplete Sensitivity List
+
+Simulator and synthesizer work in a different way, during simulation the output changes when there is a change in the input. Simulation considers the sensitivity list while producing the result. Synthesizer does not consider the sensitivity list for combinational logic. Synthesizer just looks into the sensitivity list just to know whether its a combinaltional or sequential sensitivity list. Sensitivity list is made sequential by making it sensitive to edge i.e. by including posedge or negedge.
+
+**Note:** Sensitivity list must be either pure sequential `always@(posedge clk, posedge rst)` or pure combinational `always@(a, b, reset)`, it should not include both constructs like `always@(posedge clk, reset)`.
+
+Below are the simulation results of mux with only select input in sensitivity list, which produces synthesis simulation mismatch. Even though RTL code includes only select input in sensitivity list, synthesizer ignores sensitivity list, hence while GLS we get simulation synthesis mismatch.
+
+![mismatch_mux](images/mismatch_mux.png)
+
+### Blocking Assignments
+
+
