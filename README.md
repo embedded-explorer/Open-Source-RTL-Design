@@ -206,14 +206,21 @@ We all know that multiplying by 2 is nothing but left shifting the input data by
 
 ### Combinational Logic Optimization
 
-Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization. Below are few optimization examples.
+Combinational logic can be optimized using methods like Constant Propagation and Boolean Logic Optimization. If any one of the input to the combinational logic is tied to constant, then the logic will be optimized by the synthesizer. 
 
-* Constant Propagation Example
-If any one of the input to the combinational logic is tied to constant, then the logic will be optimized by the synthesizer.
+Before mapping to the library using `abc` make sure to run the below command, in order to perform optimization.
 
 ```
 opt_clean -purge
 ```
+
+Below are two examples of constant propagation optimization, in first case even thogh we try to implement mux the synthesizer optimizes the logic to and gate. In second case mux is optimized to or gate, but synthesizer preferes nand inmplementation of or logic for better logical effort.
+
+![comb_opt1](images/comb_opt1.png)
+
+Here is another example with multiple modules, in this case we the order to run the commands is `synth -top` `flatten` `opt_clean -purge` `abc -liberty`
+
+![comb_opt2](images/comb_opt2.png)
 
 ### Sequential Logic Optimization
 
