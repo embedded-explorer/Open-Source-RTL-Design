@@ -1,5 +1,8 @@
 # Open Source RTL Design
-This repository contains the usage of tools like iverilog, gtkwave and yosys for open-source RTL Design. The content is documentation of tasks carried out during VSD "RTL Design Using Verilog With SKY130 Technology".
+
+![vsd](images/vsd.png)
+
+This repository documents the usage of tools like iverilog, gtkwave and yosys for open-source RTL Design. The content is documentation of tasks carried out during VSD "RTL Design Using Verilog With SKY130 Technology" 5 day workshop.
 
 ## Table of Contents
 
@@ -27,10 +30,11 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
   * [If Statement and Inferred Latches](#If-Statement-and-Inferred-Latches)
   * [Case and its Associated Caveats](#Case-and-its-Associated-Caveats)
   * [for and for generate](#for-and-for-generate)
+- [Acknowledgements](#Acknowledgements)
 
 ## Open Source Tool Chain
 
-Usually front-end RTL design is carried out using huge EDA Tools from different vendors. Even though many of the tools come with free limited versions its better to give a try for development using open-source tools. Below is the list of tools used by this repo.
+Usually front-end RTL design is carried out using huge EDA Tools from different vendors. Even though many of the tools come with free limited versions its better to give a try for development using open-source tools. Below is the list of tools used.
 
 ### iverilog
 
@@ -74,7 +78,7 @@ gtkwave test_bench.vcd
 
 ### sky130 libraries
 
-sky130 pdk library is used for mapping the purpose during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git). For further details about the library refer [wiki](https://skywater-pdk.readthedocs.io/en/latest/contents.html).
+sky130 pdk library is used for standard cell mapping during synthesis. The design gets mapped to standard cell definitions present in "sky130_fd_sc_hd__tt_025C_1v80.lib" library. The necessary files for synthesis are well organized in the [git repository](https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git). For further details about the library refer [wiki](https://skywater-pdk.readthedocs.io/en/latest/contents.html).
 
 * Clone the repository using following command.
 
@@ -134,7 +138,7 @@ show
 
 ![synth_mux](images/synth_mux.png)
 
-**Note** : Due to different optimization techniques used the synthesizer may implement different logic when synthesized using different tool versions.
+**Note** : Due to different optimization techniques used, synthesizer may implement different logic when synthesized using different tool versions.
 
 ## Modelling Techniques
 
@@ -304,3 +308,8 @@ Below is an example where for loop is used inside always block to model demultip
 Below is an example where for is used inside generate block to instntiate full adder multiple times to generate ripple carry adder.
 
 ![for_gen](images/for_gen.png)
+
+## Acknowledgements
+
+* Kunal Gosh, Co-Founder (VSD Corp. Pvt Ltd)
+* Shon Taware, Teaching Assistant (VSD Corp. Pvt Ltd)
