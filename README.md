@@ -23,6 +23,9 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 - [Gate Level Simulation (GLS)](#Gate-Level-Simulation-(GLS))
   * [Incomplete Sensitivity List](#Incomplete-Sensitivity-List)
   * [Blocking Assignments](#Blocking-Assignments)
+- [Behavioural Modelling Constructs](#Behavioural-Modelling-Constructs)
+  * [If Statement and Inferred Latches](#If-Statement-and-Inferred-Latches)
+  * [Case and its Associated Caveats](#Case-and-its-Associated-Caveats)
 
 ## Open Source Tool Chain
 
@@ -224,9 +227,25 @@ Here is another example with multiple modules, in this case order of running com
 
 ### Sequential Logic Optimization
 
-Combinational logic can be optimized using methods like Sequential Constant Propagation, State Optimization, Retiming and Sequential Logic Cloning (Floor Plan Aware Synthesis).
+Sequential logic can be optimized using methods like Sequential Constant Propagation, State Optimization, Retiming and Sequential Logic Cloning (Floor Plan Aware Synthesis). 
+
+In case of sequential logic optimization, input tied to a constant always will not result in optimized result. Below is the example to demonstrate this, the DFF has asynchronous active high reset and D input is tied to high. It is evident from the simulation that if the reset is deasserted at any point the output goes high on next positive edge of clock. Hence the logic cannot be optimized. Consider the second example where DFF has active high set and D input tied to high, here as the output always remains high the logic is optimized.
+
+![seq_opt1](images/seq_opt1.png)
+
+Consider below example with 2 Flip Flops, where one has asynchronous reset and other has asynchronous set. Input of First D FF is held high, the logic cannot be optimized due to the Tcq (clock to out delay), the output will be low for one clock cycle.
+
+![seq_opt2](images/seq_opt2.png)
+
+Consider below example with 2 FFs, both having asynchronous set and D input of first flop tied to high. Even if we make set as high or low the output will always be high hence the logic gets optimized.
+
+![seq_opt3](images/seq_opt3.png)
 
 ### Unuesd Output Optimization
+
+In some cases all the outputs of the logic are not used, the synthesizer tries to optimize such kind of logic. Consider an example of 3-Bit up-conter where only least significant bit is of interest and is assigned to the output, rest 2 most significant bits of counter are not used. In this case the synthesizer optimizes the circuit to produce minimal logic required, instead of inferring 3 FF only one FF is inferred.
+
+![out_opt](images/out_opt.png)
 
 ## Gate Level Simulation (GLS)
 Gate Level Simulation is nothing but running testbench considering the netlist as design under test instead of RTL code. GLS needs to be performed to verify the logical correctness of the design after synthesis. It is used to find if there are any synthesis simulation mismatches. GLS is also used to ensure that the timing of the design is met, but to verify timing GLS needs to be run with delay annotation. To perform GLS using iverilog we need to provide the netlist along with the gate level verilog models of the standard cells and testbench while invoking `iverilog`. If gate level verilog models contain timing information then we can perform timing aware GLS but in our case we are only performing basic GLS to verify the logic. Synthesis simulation mismatch can occur due incomplete sensitivity list, blocking assignments and non stndard verilog.
@@ -243,9 +262,23 @@ Below are the simulation results of mux with only select input in sensitivity li
 
 ### Blocking Assignments
 
-Blocking assignments are evaluated sequentially and sometimes cause serious problems if they are not used properly. Consider combinationational circuit example shown below, the verilog code tries to implement or gate followed by and gate. During simulation `d = x & c` is evaluated first hence the and gate considers previous value of `x` which is evident by waveforms. As it is a combinational logic the synthesizer implements it properly and the output does not depend on previous value. This causes synthesis simulation mismatch.
+Blocking assignments are evaluated sequentially and sometimes cause serious problems if they are not used properly. Consider combinational circuit example shown below, the verilog code tries to implement or gate followed by and gate. During simulation `d = x & c` is evaluated first hence the and gate considers previous value of `x` which is evident by waveforms. As it is a combinational logic the synthesizer implements it properly and the output does not depend on previous value. This causes synthesis simulation mismatch.
 
 ![mismatch_blocking](images/mismatch_blocking.png)
 
-Conseder example of shift register, the verilog code tries to implemnt 2 bit shift register. The in which `q1 = d` and `dout = q1` is swapped, due to sequential nature of blocking assignments as `q1 = d` is evaluated first `dout = q1` is nothing but `dout = d`. Hence even though we try to implement 2 FFs it is equivalent to implementing only 1 FF. 
+## Behavioural Modelling Constructs
+
+### If Statement and Inferred Latches
+
+If statement implements priority logic using multiplexers, where first if has highest priority and the last else has least priority. Every if statement must be associated with else statement, else latch will be inferred. The inferred latches are not expected in combinational logic, but sometimes inferred latches might be acceptable in case of sequential logic.
+
+Consider below example, here we do not mention what must be assigned to output when `i0` is low hence the logic tries to latch the previous result. This causes a latch to be inferred which is not expected in combinational logic. By observing the waveforms it is eveident that when `i0` is low the output is latched. Here even though the we try to model mux D Latch is inferred.
+
+![if1](images/if1.png)
+
+### Case and its Associated Caveats
+
+Case statement is realized using multplexers but unlike if statement it does not has any priority. Similar to if statement case statement has also has many problems and care must be taken while using it. In case of incomplete case and partial assignment latches will be inferred. Latches inferred due to incomplete case can be avoided using default case, but care must be taken to avoid partial assignments. Overlapping case also gives rise to problem when more than one condition evaluates to be true.
+
+
 
