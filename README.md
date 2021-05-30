@@ -26,6 +26,7 @@ This repository contains the usage of tools like iverilog, gtkwave and yosys for
 - [Behavioural Modelling Constructs](#Behavioural-Modelling-Constructs)
   * [If Statement and Inferred Latches](#If-Statement-and-Inferred-Latches)
   * [Case and its Associated Caveats](#Case-and-its-Associated-Caveats)
+  * [for and for generate](#for-and-for-generate)
 
 ## Open Source Tool Chain
 
@@ -280,5 +281,26 @@ Consider below example, here we do not mention what must be assigned to output w
 
 Case statement is realized using multplexers but unlike if statement it does not has any priority. Similar to if statement case statement has also has many problems and care must be taken while using it. In case of incomplete case and partial assignment latches will be inferred. Latches inferred due to incomplete case can be avoided using default case, but care must be taken to avoid partial assignments. Overlapping case also gives rise to problem when more than one condition evaluates to be true.
 
+Below example shows how incomplete case staement leads to inferred latch. Here output is not assigned when `sel` is `10` and `11` hence previous output will be latched.
 
+![incomp_case](images/incomp_case.png)
 
+Below example demonstrates how partial case assignment will infer latch. In this case 2 different outputs are assigned using single select line, assignment of second output is not done for `01` case this causes a latch to be inferred.
+
+![partial_case](images/partial_case.png)
+
+Consider below example here there is overlap in the case, `1?` can either be `10` or `11`, but we have already included `10` thus the simulator will be confused and synthesizer may produce different result and thus causes simulation synthesis mismatch.
+
+![overlap_case](images/overlap_case.png)
+
+### for and for generate
+
+There are two flavours of for loops in verilog, ithe functionality of for depends on where it is used. If for loop is used inside always block then it performs multiple evaluations, if for loop is used inside generate block then it replicates the hardware multiple times. The loopvariable in case of for generate should be genvar.
+
+Below is an example where for loop is used inside always block to model demultiplexer.
+
+![for](images/for.png)
+
+Below is an example where for is used inside generate block to instntiate full adder multiple times to generate ripple carry adder.
+
+![for_gen](images/for_gen.png)
