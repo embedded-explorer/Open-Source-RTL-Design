@@ -12,7 +12,7 @@ This repository documents the usage of tools like iverilog, gtkwave and yosys fo
   * [sky130 libraries](#sky130-libraries)
   * [yosys](#yosys)
 - [Modelling Techniques](#Modelling-Techniques)
-  * [Sensitivity List for Combinational Logic](#Sensitivity-List-for-Combinational-Logic)
+  * [Multiplexer](#Multiplexer)
   * [Modelling Flip Flops](#Modelling-Flip-Flops)
 - [Synthesis Techniques](#Synthesis-Techniques)
   * [Hierarchial Synthesis](#Hierarchial-Synthesis)
@@ -142,7 +142,7 @@ show
 
 ## Modelling Techniques
 
-### Sensitivity List for Combinational Logic
+### Multiplexer
 
 To properly model any combinational logic using verilog the sensitivity list must contain all inputs, else the design will not function as expected. To demonstrate this concept consider a simple multiplexer as example. Below figure shows improper modelling style along with the waveform. It is evident that the output changes only when select input changes and is unaffected by changing only inputs which is not expected.
 
