@@ -1,0 +1,522 @@
+$date
+	Wed Jun  2 22:41:22 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_bad_shift_reg2_net $end
+$var wire 1 ! dout $end
+$var reg 1 " clk $end
+$var reg 1 # d $end
+$var reg 1 $ reset $end
+$scope module uut $end
+$var wire 1 % _0_ $end
+$var wire 1 & _3_ $end
+$var wire 1 ' _4_ $end
+$var wire 1 " clk $end
+$var wire 1 # d $end
+$var wire 1 $ reset $end
+$var wire 1 ( q1 $end
+$var wire 1 ! dout $end
+$var wire 1 ) _2_ $end
+$var wire 1 * _1_ $end
+$scope module _5_ $end
+$var wire 1 % A $end
+$var wire 1 + VGND $end
+$var wire 1 , VNB $end
+$var wire 1 - VPB $end
+$var wire 1 . VPWR $end
+$var wire 1 * Y $end
+$scope module base $end
+$var wire 1 % A $end
+$var wire 1 / VGND $end
+$var wire 1 0 VNB $end
+$var wire 1 1 VPB $end
+$var wire 1 2 VPWR $end
+$var wire 1 * Y $end
+$var wire 1 3 not0_out_Y $end
+$upscope $end
+$upscope $end
+$scope module _6_ $end
+$var wire 1 % A $end
+$var wire 1 4 VGND $end
+$var wire 1 5 VNB $end
+$var wire 1 6 VPB $end
+$var wire 1 7 VPWR $end
+$var wire 1 ) Y $end
+$scope module base $end
+$var wire 1 % A $end
+$var wire 1 8 VGND $end
+$var wire 1 9 VNB $end
+$var wire 1 : VPB $end
+$var wire 1 ; VPWR $end
+$var wire 1 ) Y $end
+$var wire 1 < not0_out_Y $end
+$upscope $end
+$upscope $end
+$scope module _7_ $end
+$var wire 1 " CLK $end
+$var wire 1 & RESET_B $end
+$var wire 1 = VGND $end
+$var wire 1 > VNB $end
+$var wire 1 ? VPB $end
+$var wire 1 @ VPWR $end
+$var wire 1 ! Q $end
+$var wire 1 ( D $end
+$scope module base $end
+$var wire 1 " CLK $end
+$var wire 1 A CLK_delayed $end
+$var wire 1 B D_delayed $end
+$var wire 1 ! Q $end
+$var wire 1 C RESET $end
+$var wire 1 & RESET_B $end
+$var wire 1 D RESET_B_delayed $end
+$var wire 1 E VGND $end
+$var wire 1 F VNB $end
+$var wire 1 G VPB $end
+$var wire 1 H VPWR $end
+$var wire 1 I buf_Q $end
+$var wire 1 J cond0 $end
+$var wire 1 K cond1 $end
+$var wire 1 L awake $end
+$var wire 1 ( D $end
+$var reg 1 M notifier $end
+$upscope $end
+$upscope $end
+$scope module _8_ $end
+$var wire 1 " CLK $end
+$var wire 1 # D $end
+$var wire 1 ' RESET_B $end
+$var wire 1 N VGND $end
+$var wire 1 O VNB $end
+$var wire 1 P VPB $end
+$var wire 1 Q VPWR $end
+$var wire 1 ( Q $end
+$scope module base $end
+$var wire 1 " CLK $end
+$var wire 1 R CLK_delayed $end
+$var wire 1 # D $end
+$var wire 1 S D_delayed $end
+$var wire 1 ( Q $end
+$var wire 1 T RESET $end
+$var wire 1 ' RESET_B $end
+$var wire 1 U RESET_B_delayed $end
+$var wire 1 V VGND $end
+$var wire 1 W VNB $end
+$var wire 1 X VPB $end
+$var wire 1 Y VPWR $end
+$var wire 1 Z buf_Q $end
+$var wire 1 [ cond0 $end
+$var wire 1 \ cond1 $end
+$var wire 1 ] awake $end
+$var reg 1 ^ notifier $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x^
+1]
+0\
+0[
+zZ
+1Y
+1X
+0W
+0V
+zU
+zT
+zS
+zR
+1Q
+1P
+0O
+0N
+xM
+1L
+0K
+0J
+zI
+1H
+1G
+0F
+0E
+zD
+zC
+zB
+zA
+1@
+1?
+0>
+0=
+0<
+1;
+1:
+09
+08
+17
+16
+05
+04
+03
+12
+11
+00
+0/
+1.
+1-
+0,
+0+
+0*
+0)
+z(
+0'
+0&
+1%
+1$
+0#
+0"
+z!
+$end
+#20000
+1"
+#40000
+0"
+#60000
+1"
+#80000
+0"
+#100000
+1"
+#113000
+1\
+1K
+1'
+1*
+1&
+1)
+13
+1<
+0%
+0$
+#120000
+0"
+#140000
+1"
+#160000
+0"
+#180000
+1"
+#200000
+0"
+#220000
+1"
+#223000
+1#
+#240000
+0"
+#260000
+1"
+#280000
+0"
+#300000
+1"
+#320000
+0"
+#340000
+1"
+#360000
+0"
+#380000
+1"
+#400000
+0"
+#420000
+1"
+#440000
+0"
+#446000
+0#
+#460000
+1"
+#480000
+0"
+#500000
+1"
+#520000
+0"
+#540000
+1"
+#560000
+0"
+#580000
+1"
+#600000
+0"
+#620000
+1"
+#640000
+0"
+#660000
+1"
+#669000
+1#
+#680000
+0"
+#700000
+1"
+#720000
+0"
+#740000
+1"
+#760000
+0"
+#780000
+1"
+#800000
+0"
+#820000
+1"
+#840000
+0"
+#860000
+1"
+#880000
+0"
+#892000
+0#
+#900000
+1"
+#920000
+0"
+#940000
+1"
+#960000
+0"
+#980000
+1"
+#1000000
+0"
+#1020000
+1"
+#1040000
+0"
+#1060000
+1"
+#1080000
+0"
+#1100000
+1"
+#1115000
+1#
+#1120000
+0"
+#1140000
+1"
+#1160000
+0"
+#1180000
+1"
+#1200000
+0"
+#1220000
+1"
+#1240000
+0"
+#1260000
+1"
+#1280000
+0"
+#1300000
+1"
+#1320000
+0"
+#1338000
+0#
+#1340000
+1"
+#1360000
+0"
+#1380000
+1"
+#1400000
+0"
+#1420000
+1"
+#1440000
+0"
+#1460000
+1"
+#1480000
+0"
+#1500000
+1"
+#1520000
+0"
+#1540000
+1"
+#1560000
+0"
+#1561000
+1#
+#1580000
+1"
+#1600000
+0"
+#1620000
+1"
+#1640000
+0"
+#1660000
+1"
+#1680000
+0"
+#1700000
+1"
+#1720000
+0"
+#1740000
+1"
+#1760000
+0"
+#1780000
+1"
+#1784000
+0#
+#1800000
+0"
+#1820000
+1"
+#1840000
+0"
+#1860000
+1"
+#1880000
+0"
+#1900000
+1"
+#1920000
+0"
+#1940000
+1"
+#1960000
+0"
+#1980000
+1"
+#2000000
+0"
+#2007000
+1#
+#2020000
+1"
+#2040000
+0"
+#2060000
+1"
+#2080000
+0"
+#2100000
+1"
+#2120000
+0"
+#2140000
+1"
+#2160000
+0"
+#2180000
+1"
+#2200000
+0"
+#2220000
+1"
+#2230000
+0#
+#2240000
+0"
+#2260000
+1"
+#2280000
+0"
+#2300000
+1"
+#2320000
+0"
+#2340000
+1"
+#2360000
+0"
+#2380000
+1"
+#2400000
+0"
+#2420000
+1"
+#2440000
+0"
+#2453000
+1#
+#2460000
+1"
+#2480000
+0"
+#2500000
+1"
+#2520000
+0"
+#2540000
+1"
+#2560000
+0"
+#2580000
+1"
+#2600000
+0"
+#2620000
+1"
+#2640000
+0"
+#2660000
+1"
+#2676000
+0#
+#2680000
+0"
+#2700000
+1"
+#2720000
+0"
+#2740000
+1"
+#2760000
+0"
+#2780000
+1"
+#2800000
+0"
+#2820000
+1"
+#2840000
+0"
+#2860000
+1"
+#2880000
+0"
+#2899000
+1#
+#2900000
+1"
+#2920000
+0"
+#2940000
+1"
+#2960000
+0"
+#2980000
+1"
+#3000000
+0"
