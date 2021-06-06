@@ -1,0 +1,143 @@
+$date
+	Mon May 31 17:00:29 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_multiple_modules $end
+$var wire 1 ! y $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ c $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ c $end
+$var wire 1 ! y $end
+$var wire 1 % net1 $end
+$scope module u1 $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 % y $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 % a $end
+$var wire 1 $ b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#10000
+1"
+#20000
+0"
+#30000
+1"
+#40000
+0"
+#50000
+1"
+#55000
+1!
+1%
+1#
+#60000
+0!
+0%
+0"
+#70000
+1!
+1%
+1"
+#75000
+1$
+#80000
+0%
+0"
+#90000
+1%
+1"
+#100000
+0%
+0"
+#110000
+1"
+0#
+#120000
+0"
+#130000
+1"
+#140000
+0"
+#150000
+0!
+1"
+0$
+#160000
+0"
+#165000
+1#
+#170000
+1!
+1%
+1"
+#180000
+0!
+0%
+0"
+#190000
+1!
+1%
+1"
+#200000
+0!
+0%
+0"
+#210000
+1!
+1%
+1"
+#220000
+0!
+0%
+0"
+0#
+#225000
+1!
+1$
+#230000
+1"
+#240000
+0"
+#250000
+1"
+#260000
+0"
+#270000
+1"
+#275000
+1%
+1#
+#280000
+0%
+0"
+#290000
+1%
+1"
+#300000
+0!
+0%
+0"
+0$
